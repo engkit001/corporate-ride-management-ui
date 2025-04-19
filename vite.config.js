@@ -7,24 +7,24 @@ export default defineConfig({
 
   server: {
     port: 3000,
-    proxy: {
-      '/rides': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-      }, 
-      '/drivers': {
-        target: 'http://localhost:8081',
-        changeOrigin: true,
-      },
-      '/auth': {
-        target: 'http://localhost:8082',
-        changeOrigin: true,
-      },
-      '/users': {
-        target: 'http://localhost:8082',
-        changeOrigin: true,
-      },
-    }    
+    // proxy: {
+    //   '/rides': {
+    //     target: 'http://localhost:8080',
+    //     changeOrigin: true,
+    //   }, 
+    //   '/drivers': {
+    //     target: 'http://localhost:8081',
+    //     changeOrigin: true,
+    //   },
+    //   '/auth': {
+    //     target: 'http://localhost:8082',
+    //     changeOrigin: true,
+    //   },
+    //   '/users': {
+    //     target: 'http://localhost:8082',
+    //     changeOrigin: true,
+    //   },
+    // }    
   }
 
 })

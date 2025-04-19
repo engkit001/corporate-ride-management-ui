@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const REST_API_BASE_URL = "http://localhost:8082/users"; 
+const USER_SERVICE_BASE_URL = import.meta.env.VITE_USER_SERVICE_URL;
 
 // Function to get the list of users
 export const listUsers = () => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}`;
+    const url = `${USER_SERVICE_BASE_URL}`;
     return axios.get(url, {
         headers: {
             Authorization: `Bearer ${token}`,
@@ -15,7 +15,7 @@ export const listUsers = () => {
 
 export const registerUser = ({ username, password, role }) => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}/register`;
+    const url = `${USER_SERVICE_BASE_URL}/register`;
     return axios.post(url, 
         {
             username,

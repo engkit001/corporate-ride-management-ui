@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const REST_API_BASE_URL = "http://localhost:8081/drivers"; // Base URL for the driver service
+const DRIVER_SERVICE_BASE_URL = import.meta.env.VITE_DRIVER_SERVICE_URL;
 
 // Function to get the list of drivers
 export const listDrivers = () => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}`;
+    const url = `${DRIVER_SERVICE_BASE_URL}`;
     return axios.get(url, {
         headers: {
             Authorization: `Bearer ${token}`,
@@ -16,7 +16,7 @@ export const listDrivers = () => {
 // Function to register a new driver
 export const registerDriver = ({ id, name, phoneNumber, vehicleNumber }) => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}/register`;
+    const url = `${DRIVER_SERVICE_BASE_URL}/register`;
     return axios.post(url, 
         {
             id,

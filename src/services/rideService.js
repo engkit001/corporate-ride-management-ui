@@ -2,14 +2,14 @@
 import axios from "axios";
 import { getUserFromToken } from "../utils/authUtils";
 
-const REST_API_BASE_URL = 'http://localhost:8080/rides';
+const RIDE_SERVICE_BASE_URL = import.meta.env.VITE_RIDE_SERVICE_URL;
 
 // Function to get the list of rides
 export const listRides = () => {
     const token = localStorage.getItem("token");
     const user = getUserFromToken();
 
-    let url = REST_API_BASE_URL;
+    let url = RIDE_SERVICE_BASE_URL;
 
     if (user) {
         const params = new URLSearchParams();
@@ -34,7 +34,7 @@ export const listRides = () => {
 // Function to cancel a ride by ID
 export const cancelRide = (rideId) => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}/${rideId}/cancel`;
+    const url = `${RIDE_SERVICE_BASE_URL}/${rideId}/cancel`;
 
     return axios.patch(url, {}, {
         headers: {
@@ -46,7 +46,7 @@ export const cancelRide = (rideId) => {
 // Function to start a ride by ID
 export const startRide = (rideId) => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}/${rideId}/start`;
+    const url = `${RIDE_SERVICE_BASE_URL}/${rideId}/start`;
 
     return axios.patch(url, {}, {
         headers: {
@@ -58,7 +58,7 @@ export const startRide = (rideId) => {
 // Function to complete a ride by ID
 export const completeRide = (rideId) => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}/${rideId}/complete`;
+    const url = `${RIDE_SERVICE_BASE_URL}/${rideId}/complete`;
 
     return axios.patch(url, {}, {
         headers: {
@@ -70,7 +70,7 @@ export const completeRide = (rideId) => {
 // Function to request a ride
 export const requestRide = ({ userId, pickupLocation, dropoffLocation }) => {
     const token = localStorage.getItem("token");
-    const url = `${REST_API_BASE_URL}/request`;
+    const url = `${RIDE_SERVICE_BASE_URL}/request`;
     return axios.post(url, 
         {
             userId,

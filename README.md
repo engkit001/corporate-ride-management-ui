@@ -5,7 +5,7 @@ See https://github.com/engkit001/corporate-ride-management for details.
 
 # Test Procedure for basic flow:
 
-1. Go to http://localhost:3000
+1. Go to _http://localhost:3000_
 2. Login as _admin_ with password _12345_
 3 Go to the Users tab and register 2 users with password _12345_:
     _EMP001_ with _PASSENGER_ role
@@ -17,7 +17,7 @@ See https://github.com/engkit001/corporate-ride-management for details.
 7. Request a ride from _A_ to _D_
 8. Note that the ride is shown with _Requested_ status
 9. Click on the _Rides_ tab to refresh the page
-10. Note that the ride is now Assigned
+10. Note that the ride is now _Assigned_
 11. Login as _DRIVER001_
 12. Note that the ride is shown with a _Start_ button
 13. Click _Start_

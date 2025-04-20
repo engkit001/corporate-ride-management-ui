@@ -7,7 +7,7 @@ See https://github.com/engkit001/corporate-ride-management for details.
 
 1. Go to _http://localhost:3000_
 2. Login as _admin_ with password _12345_
-3 Go to the Users tab and register 2 users with password _12345_:
+3. Go to the Users tab and register 2 users with password _12345_:
     _EMP001_ with _PASSENGER_ role
     _DRIVER001_ with _DRIVER_ role
 4. Go to the _Drivers_ tab and register a driver
